@@ -11,14 +11,14 @@
 
     <View
         android:id="@+id/rectangle_3"
-        android:layout_width="417dp"
-        android:layout_height="335dp"
+        android:layout_width="407dp"
+        android:layout_height="336dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/rectangle_3"
-        android:elevation="30dp"
-        tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/group_3"
@@ -27,8 +27,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="#00000000"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="84dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_3" />
+
 
     <TextView
         android:id="@+id/login"
@@ -36,12 +39,14 @@
         android:layout_height="28dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginStart="56dp"
         android:gravity="top"
         android:text="@string/login"
+        android:textAlignment="center"
         android:textAppearance="@style/login"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="307dp" />
-
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/rectangle_1"
@@ -49,10 +54,11 @@
         android:layout_height="3dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginStart="32dp"
         android:background="@drawable/rectangle_1"
         android:elevation="4dp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="335dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_3" />
 
     <TextView
         android:id="@+id/sign_up"
@@ -60,55 +66,42 @@
         android:layout_height="27dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="48dp"
         android:gravity="top"
         android:text="@string/sign_up"
         android:textAppearance="@style/sign_up"
-        tools:layout_editor_absoluteX="277dp"
-        tools:layout_editor_absoluteY="306dp" />
-
-    <View
-        android:id="@+id/group_1"
-        android:layout_width="345dp"
-        android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#00000000"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="386dp" />
-
-    <TextView
-        android:id="@+id/phone_numbe"
-        android:layout_width="178dp"
-        android:layout_height="24dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:alpha="0.4"
-        android:gravity="top"
-        android:text="@string/phone_numbe"
-        android:textAppearance="@style/phone_numbe"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="386dp" />
-
-    <EditText
-        android:id="@+id/numb"
-        android:layout_width="315dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:gravity="top"
-        android:hint="Enter your Contact number"
-        android:inputType="phone"
-        android:textAppearance="@style/xxxxx75"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="419dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnGetOtp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
         android:text="Get OTP"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="498dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnGetOtp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:text="9090909090" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
