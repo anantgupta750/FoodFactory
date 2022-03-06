@@ -54,7 +54,7 @@ class MenuFragment : Fragment() {
         addOnSuccessListener { document ->
             if(document != null)
             {
-                Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                Log.d(TAG, "DocumentSnapshot data: ${document}")
             }
             else
             {
