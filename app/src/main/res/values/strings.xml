@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Food Factory</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign-up</string>
+    <string name="phone_numbe">Phone Number</string>
+
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
