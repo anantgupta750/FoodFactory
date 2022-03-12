@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:background="#ffffff">
+    android:background="@drawable/round_rect_shape"
+    android:elevation="18dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgCategory"
@@ -16,6 +17,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:elevation="18dp"
         android:src="@drawable/ic_launcher_background"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
@@ -71,5 +73,14 @@
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textCategory"
         app:layout_constraintVertical_bias="0.18" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="28dp"
+        android:layout_height="25dp"
+        android:background="@drawable/round_rect_shape"
+        app:srcCompat="@drawable/veg"
+        tools:layout_editor_absoluteX="325dp"
+        tools:layout_editor_absoluteY="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

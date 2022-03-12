@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:background="#ffffff">
+    android:background="@drawable/round_rect_shape"
+    android:elevation="18dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgCategory"
@@ -109,6 +110,15 @@
             android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="28dp"
+        android:layout_height="25dp"
+        android:background="@drawable/round_rect_shape"
+        app:srcCompat="@drawable/veg"
+        tools:layout_editor_absoluteX="325dp"
+        tools:layout_editor_absoluteY="8dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

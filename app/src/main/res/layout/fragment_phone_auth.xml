@@ -8,6 +8,19 @@
     android:background="#919191"
     tools:context=".ui.PhoneAuth">
 
+    <ImageView
+        android:id="@+id/imgMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="600dp"
+        android:background="#ffffff"
+        android:elevation="20dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
 
     <Button
         android:id="@+id/btnGetOtp2"
@@ -31,13 +44,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+    <ImageView
         android:id="@+id/group_3"
         android:layout_width="144dp"
         android:layout_height="162.38dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#00000000"
+        android:background="@drawable/LoginWin"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
         app:layout_constraintStart_toStartOf="@+id/rectangle_3"
