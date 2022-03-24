@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#999999"
+    android:background="#f2f2f2"
     android:clipToPadding="false"
     tools:context=".SubMenuFragment">
 
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="658dp"
         android:layout_marginTop="110dp"
-        android:background="#999999"
+        android:background="#f2f2f2"
         tools:listitem="@layout/dish_item" />
 
     <TextView

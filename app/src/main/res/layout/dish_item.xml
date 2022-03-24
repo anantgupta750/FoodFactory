@@ -38,13 +38,13 @@
         android:text="@string/tomato_vegg"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/priceDish"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgCategory"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/priceDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -70,12 +70,12 @@
         android:text="Add to Cart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/priceDish"
         app:layout_constraintTop_toBottomOf="@+id/textCategory"
         app:layout_constraintVertical_bias="0.18" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/vegImage_Cart"
         android:layout_width="28dp"
         android:layout_height="25dp"
         android:background="@drawable/round_rect_shape"
