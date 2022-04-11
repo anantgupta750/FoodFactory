@@ -27,7 +27,7 @@
 
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/new_drawable"
+        android:src="@drawable/chef"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"

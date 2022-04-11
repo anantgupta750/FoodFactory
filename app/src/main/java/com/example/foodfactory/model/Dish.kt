@@ -1,5 +1,9 @@
 package com.example.foodfactory.model
 
-data class Dish (var ID:String ?= null, var Name:String ?= null, var Price:Integer ?=null, var Availability:Boolean ?= null, var Vegetarian:Boolean ?= null ) {
-
-}
+data class Dish(
+    var avail: Boolean = true,
+    var image: String = "",
+    var name: String = "",
+    var price: Int = 10,
+    var veg: Boolean = true
+)

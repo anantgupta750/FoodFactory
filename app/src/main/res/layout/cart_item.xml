@@ -5,7 +5,7 @@
     android:id="@+id/frame_1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
+    android:layout_margin="12dp"
     android:background="@drawable/round_rect_shape"
     android:elevation="18dp">
 
@@ -83,7 +83,7 @@
         tools:visibility="visible">
 
         <TextView
-            android:id="@+id/t1"
+            android:id="@+id/bmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -92,7 +92,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/t2"
+            android:id="@+id/qty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -102,7 +102,7 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/t3"
+            android:id="@+id/bplus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+"
@@ -115,10 +115,12 @@
         android:id="@+id/vegImage_Cart"
         android:layout_width="28dp"
         android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/round_rect_shape"
-        app:srcCompat="@drawable/veg"
-        tools:layout_editor_absoluteX="325dp"
-        tools:layout_editor_absoluteY="8dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/veg" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

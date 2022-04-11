@@ -20,28 +20,22 @@
         <action
             android:id="@+id/action_subMenuFragment_to_orderFragment"
             app:destination="@id/orderFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/nav_phone"
-        android:name="com.example.foodfactory.ui.PhoneAuth"
+        android:name="com.example.foodfactory.ui.FragmentPhoneAuth"
         android:label="fragment_phone_auth"
         tools:layout="@layout/fragment_phone_auth" >
         <action
-            android:id="@+id/action_nav_phone_to_otpFragment"
-            app:destination="@id/otpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/otpFragment"
-        android:name="com.example.foodfactory.OtpFragment"
-        android:label="fragment_otp"
-        tools:layout="@layout/fragment_otp" >
-        <action
-            android:id="@+id/action_otpFragment_to_nav_menu"
+            android:id="@+id/action_nav_phone_to_nav_menu"
             app:destination="@id/nav_menu" />
     </fragment>
     <fragment
         android:id="@+id/qrFragment"
-        android:name="com.example.foodfactory.QrFragment"
+        android:name="com.example.foodfactory.ui.QrFragment"
         android:label="fragment_qr"
         tools:layout="@layout/fragment_qr" >
         <action
