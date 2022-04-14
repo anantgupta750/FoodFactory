@@ -42,7 +42,7 @@
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_margin="12dp"
-        android:background=""
+        android:background="#55FFFFFF"
         app:icon="@drawable/ic_baseline_shopping_cart_24"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
