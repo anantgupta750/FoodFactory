@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodfactory.adapter.MenuAdapter
 import com.example.foodfactory.databinding.FragmentMenuBinding
@@ -32,6 +34,7 @@ class MenuFragment : Fragment() {
     ): View {
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        findNavController().navigate(MenuFragmentDirections.actionNavMenuToBottomDialog())
         return root
     }
 
@@ -46,7 +49,12 @@ class MenuFragment : Fragment() {
         menuArraylist = arrayListOf()
         menuAdapter = MenuAdapter(this,menuArraylist)
         binding.recyclerView.adapter = menuAdapter
-        //Create the new functions according to the new documentation in the (sub menu fragment too)\
+
+        binding.button.setOnClickListener {
+            val dir = MenuFragmentDirections.actionNavMenuToOrderFragment()
+            view.findNavController().navigate(dir)
+
+        }
     }
 
     override fun onDestroyView() {

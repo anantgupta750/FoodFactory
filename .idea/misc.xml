@@ -20,21 +20,24 @@
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/activity_home.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/activity_scrolling.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/app_bar_home.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/bottom_dialog.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/cart_item.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/category_item.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/content_home.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/dish_item.xml" value="0.4" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_cart.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_home.xml" value="0.23802083333333332" />
-        <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_menu.xml" value="0.1" />
+        <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_menu.xml" value="0.29936305732484075" />
+        <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_order.xml" value="0.2" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_otp.xml" value="0.23802083333333332" />
-        <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_payment.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_payment.xml" value="0.1" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_phone_auth.xml" value="0.25" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_qr.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_signup.xml" value="0.4" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/fragment_sub_menu.xml" value="0.264" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/list_item.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/nav_header_home.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/order_item.xml" value="0.4" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/single_item.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/layout/testsign.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/aditr/AndroidStudioProjects/FoodFactory/app/src/main/res/menu/activity_main_drawer.xml" value="0.536" />

@@ -31,7 +31,6 @@
         android:text="@string/tomato_vegg"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cartAddButton"
         app:layout_constraintEnd_toStartOf="@+id/vegOrder"
         app:layout_constraintStart_toEndOf="@+id/imgOrderSubCategory"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,54 +46,9 @@
         android:text="Rs. 350"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cartAddButton"
         app:layout_constraintStart_toEndOf="@+id/imgOrderSubCategory"
         app:layout_constraintTop_toBottomOf="@+id/textOrderSubCategory"
         app:layout_constraintVertical_bias="0.0" />
-
-    <LinearLayout
-        android:id="@+id/quantity_Cart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/roundbutton"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:id="@+id/bmin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:text="-"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/qty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="1"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/bplus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:text="+"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
 
     <ImageView
@@ -108,20 +62,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/veg" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/cartAddButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/roundbutton"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/add_to_cart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="#F6F3F3"
-        app:layout_constraintBottom_toBottomOf="@+id/quantity_Cart"
-        app:layout_constraintEnd_toEndOf="@+id/quantity_Cart"
-        app:layout_constraintStart_toStartOf="@+id/quantity_Cart"
-        app:layout_constraintTop_toTopOf="@+id/quantity_Cart"
-        tools:visibility="invisible" />
+    <TextView
+        android:id="@+id/txtOrderQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:drawableRight="@drawable/ic_baseline_fastfood_24"
+        android:text="2 "
+        android:fontFamily="@font/croissantone_regular"
+        android:paddingRight="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/imgOrderSubCategory"
+        app:layout_constraintTop_toBottomOf="@+id/priceOrderDish" />
+
+    <ImageView
+        android:id="@+id/deleteOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtOrderQty"
+        app:layout_constraintTop_toBottomOf="@+id/vegOrder"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_delete_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

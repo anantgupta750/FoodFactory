@@ -6,9 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodfactory.R
 import com.example.foodfactory.adapter.subMenuAdapter
@@ -21,8 +22,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class SubMenuFragment : Fragment(), CellClickListener {
     private lateinit var orders: ArrayList<Order>
@@ -33,7 +32,7 @@ class SubMenuFragment : Fragment(), CellClickListener {
     private lateinit var db: FirebaseFirestore
     private lateinit var submenuArraylist: ArrayList<Dish>
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var prefs: Prefs
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -43,6 +42,8 @@ class SubMenuFragment : Fragment(), CellClickListener {
         val root: View = binding.root
         auth = Firebase.auth
         db = Firebase.firestore
+        prefs = Prefs(requireContext())
+        findNavController().navigate(SubMenuFragmentDirections.actionSubMenuFragmentToBottomDialog())
         return root
     }
 
@@ -63,17 +64,19 @@ class SubMenuFragment : Fragment(), CellClickListener {
 
         binding.recyclerViewSubMenu.adapter = submenuadapter
         binding.button.setOnClickListener {
-            orders.forEach { order ->
-                auth.currentUser?.let { it1 ->
-                    val dateTime = LocalDateTime.now()
-                    val datestr = dateTime.format(DateTimeFormatter.ofPattern("MdyH"))
-                    db.collection("orders").document(it1.uid).collection(datestr)
-                        .add(order).addOnSuccessListener {
-                            Toast.makeText(requireContext(), "order updated", Toast.LENGTH_LONG)
-                                .show()
-                        }
-                }
-            }
+            val dir = SubMenuFragmentDirections.actionSubMenuFragmentToOrderFragment()
+            view.findNavController().navigate(dir)
+//            orders.forEach { order ->
+//                auth.currentUser?.let { it1 ->
+//                    val dateTime = LocalDateTime.now()
+//                    val datestr = dateTime.format(DateTimeFormatter.ofPattern("MdyH"))
+//                    db.collection("orders").document(it1.uid).collection(datestr)
+//                        .add(order).addOnSuccessListener {
+//                            Toast.makeText(requireContext(), "order updated", Toast.LENGTH_LONG)
+//                                .show()
+//                        }
+//                }
+//            }
         }
     }
 
@@ -115,6 +118,9 @@ class SubMenuFragment : Fragment(), CellClickListener {
                         if (it.qty == 0) {
                             holder.qtycartbtn.visibility = View.INVISIBLE
                             holder.btn.visibility = View.VISIBLE
+                            prefs.deleteOrder(dish.name)
+                        } else {
+                            prefs.updateOrder(dish, it.qty)
                         }
                     }
                 }
@@ -124,6 +130,7 @@ class SubMenuFragment : Fragment(), CellClickListener {
                     if (it.dish == dish) {
                         it.qty++
                         holder.qty.text = it.qty.toString()
+                        prefs.updateOrder(dish, it.qty)
                     }
                 }
             }
@@ -133,17 +140,15 @@ class SubMenuFragment : Fragment(), CellClickListener {
                     if (it.dish == dish) {
                         it.qty = 1
                         holder.qty.text = it.qty.toString()
+                        prefs.addOrder(dish, it.qty)
                     }
                 }
             }
         }
         Log.d("orders", orders.toString())
     }
-
 }
 
-interface CellClickListener {
-    fun onCellClickListener(view: View, holder: subMenuAdapter.MyViewHolder)
-}
+
 
 

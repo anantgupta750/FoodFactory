@@ -39,13 +39,13 @@
         android:text="@string/tomato_vegg"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/priceDish"
+        app:layout_constraintBottom_toTopOf="@+id/priceOrderDish"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgCategory"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/priceDish"
+        android:id="@+id/priceOrderDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -77,7 +77,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.62"
-        app:layout_constraintStart_toEndOf="@+id/priceDish"
+        app:layout_constraintStart_toEndOf="@+id/priceOrderDish"
         app:layout_constraintTop_toBottomOf="@+id/textCategory"
         app:layout_constraintVertical_bias="1.0"
         tools:visibility="visible">

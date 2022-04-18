@@ -1,6 +1,6 @@
 package com.example.foodfactory.model
 
-class Order(
+data class Order(
     val dish: Dish? = null,
     var qty: Int = 1,
     val uid: String = "",

@@ -50,13 +50,13 @@ class subMenuAdapter(
     override fun getItemCount() = dishlist.size
 
     public class MyViewHolder(itemView: View) : ViewHolder(itemView) {
-        val image: ImageView = itemView.findViewById(R.id.imgSubCategory)
-        val dish_name: TextView = itemView.findViewById(R.id.textSubCategory)
-        val price: TextView = itemView.findViewById(R.id.priceDish)
+        val image: ImageView = itemView.findViewById(R.id.imgOrderSubCategory)
+        val dish_name: TextView = itemView.findViewById(R.id.textOrderSubCategory)
+        val price: TextView = itemView.findViewById(R.id.priceOrderDish)
         val bmin: TextView = itemView.findViewById(R.id.bmin)
         val qty: TextView = itemView.findViewById(R.id.qty)
         val bplus: TextView = itemView.findViewById(R.id.bplus)
-        val veg: ImageView = itemView.findViewById(R.id.icon)
+        val veg: ImageView = itemView.findViewById(R.id.vegOrder)
         val btn: Button = itemView.findViewById(R.id.cartAddButton)
         val qtycartbtn: LinearLayout = itemView.findViewById(R.id.quantity_Cart)
 
@@ -85,11 +85,7 @@ class subMenuAdapter(
                     .load(R.drawable.nonveg)
                     .into(veg)
             }
-
-
         }
     }
-
-
 }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/menu"
+    android:background="@drawable/bg1"
     android:clipToPadding="false">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -23,7 +23,8 @@
         android:layout_marginTop="26dp"
         android:fontFamily="@font/heading_name"
         android:text="SubMenu"
-        android:textSize="34sp"
+        android:textColor="@color/white"
+        android:textSize="32sp"
         android:textStyle="bold" />
 
     <Button
@@ -33,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_margin="12dp"
-        android:text="next"
+        android:text="Order"
         app:icon="@drawable/ic_baseline_shopping_cart_24" />
 
 
