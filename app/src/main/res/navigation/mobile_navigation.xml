@@ -15,9 +15,6 @@
         <action
             android:id="@+id/action_nav_menu_to_orderFragment"
             app:destination="@id/orderFragment" />
-        <action
-            android:id="@+id/action_nav_menu_to_bottom_dialog"
-            app:destination="@id/bottom_dialog" />
     </fragment>
     <fragment
         android:id="@+id/subMenuFragment"
@@ -29,9 +26,6 @@
         <argument
             android:name="name"
             app:argType="string" />
-        <action
-            android:id="@+id/action_subMenuFragment_to_bottom_dialog"
-            app:destination="@id/bottom_dialog" />
     </fragment>
     <fragment
         android:id="@+id/nav_phone"
@@ -39,21 +33,21 @@
         android:label="fragment_phone_auth"
         tools:layout="@layout/fragment_phone_auth" >
         <action
-            android:id="@+id/action_nav_phone_to_nav_menu"
-            app:destination="@id/nav_menu" />
+            android:id="@+id/action_nav_phone_to_scanner"
+            app:destination="@id/scanner" />
     </fragment>
     <fragment
         android:id="@+id/qrFragment"
         android:name="com.example.foodfactory.ui.QrFragment"
         android:label="fragment_qr"
         tools:layout="@layout/fragment_qr" >
-        <action
-            android:id="@+id/action_qrFragment_to_statusFragment"
-            app:destination="@id/statusFragment" />
+        <argument
+            android:name="bill"
+            app:argType="com.example.foodfactory.model.Bill" />
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.example.foodfactory.PaymentFragment"
+        android:name="com.example.foodfactory.ui.PaymentFragment"
         android:label="fragment_payment"
         tools:layout="@layout/fragment_payment" >
         <action
@@ -70,13 +64,22 @@
             app:destination="@id/paymentFragment" />
     </fragment>
     <fragment
-        android:id="@+id/statusFragment"
-        android:name="com.example.foodfactory.StatusFragment"
-        android:label="fragment_status"
-        tools:layout="@layout/fragment_status" />
-    <dialog
-        android:id="@+id/bottom_dialog"
-        android:name="com.example.foodfactory.ui.Bottom_dialog"
-        android:label="Bottom_dialog" />
+        android:id="@+id/scanner"
+        android:name="com.example.foodfactory.ui.ScannerFragment"
+        android:label="fragment_scanner"
+        tools:layout="@layout/fragment_scanner" >
+        <action
+            android:id="@+id/action_scanner_to_nav_menu"
+            app:destination="@id/nav_menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/logoutFragment"
+        android:name="com.example.foodfactory.ui.LogoutFragment"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" >
+        <action
+            android:id="@+id/action_logoutFragment_to_nav_phone"
+            app:destination="@id/nav_phone" />
+    </fragment>
 
 </navigation>

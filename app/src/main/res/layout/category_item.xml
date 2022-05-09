@@ -32,7 +32,7 @@
         android:fontFamily="@font/croissantone_regular"
         android:gravity="center_horizontal|top"
         android:text="@string/tomato_vegg"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20dp"
         android:textColor="@color/GoogleTextColor"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

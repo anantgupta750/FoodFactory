@@ -5,12 +5,8 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_baseline_person_24"
-            android:title="Profile" />
-        <item
-            android:id="@+id/nav_menu"
-            android:icon="@drawable/rating"
-            android:title="Feedback" />
+            android:id="@+id/logoutFragment"
+            android:icon="@drawable/ic_baseline_fastfood_24"
+            android:title="Logout" />
     </group>
 </menu>

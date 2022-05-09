@@ -32,17 +32,17 @@ class subMenuAdapter(
         val dish: Dish = dishlist[position]
         holder.subMbinder(dish)
         holder.btn.setOnClickListener {
-            cellClickListener.onCellClickListener(it,holder)
+            cellClickListener.onCellClickListener(it, holder)
             if (holder.btn.isVisible) {
                 holder.btn.visibility = View.GONE
                 holder.qtycartbtn.visibility = View.VISIBLE
             }
         }
         holder.bmin.setOnClickListener {
-            cellClickListener.onCellClickListener(it,holder)
+            cellClickListener.onCellClickListener(it, holder)
         }
         holder.bplus.setOnClickListener {
-            cellClickListener.onCellClickListener(it,holder)
+            cellClickListener.onCellClickListener(it, holder)
         }
 
     }
@@ -50,13 +50,13 @@ class subMenuAdapter(
     override fun getItemCount() = dishlist.size
 
     public class MyViewHolder(itemView: View) : ViewHolder(itemView) {
-        val image: ImageView = itemView.findViewById(R.id.imgOrderSubCategory)
-        val dish_name: TextView = itemView.findViewById(R.id.textOrderSubCategory)
-        val price: TextView = itemView.findViewById(R.id.priceOrderDish)
+        val image: ImageView = itemView.findViewById(R.id.imgprepOrderSubCategory)
+        val dish_name: TextView = itemView.findViewById(R.id.textBillSubCategory)
+        val price: TextView = itemView.findViewById(R.id.priceBillDish)
         val bmin: TextView = itemView.findViewById(R.id.bmin)
         val qty: TextView = itemView.findViewById(R.id.qty)
         val bplus: TextView = itemView.findViewById(R.id.bplus)
-        val veg: ImageView = itemView.findViewById(R.id.vegOrder)
+        val veg: ImageView = itemView.findViewById(R.id.vegprepOrder)
         val btn: Button = itemView.findViewById(R.id.cartAddButton)
         val qtycartbtn: LinearLayout = itemView.findViewById(R.id.quantity_Cart)
 
@@ -65,25 +65,26 @@ class subMenuAdapter(
         }
 
         fun subMbinder(dish: Dish) {
-
-            btn.tag = dish
-            qty.tag = dish
-            bplus.tag = dish
-            bmin.tag = dish
-            dish_name.text = dish.name.toString()
-            price.text = dish.price.toString()
-            Glide.with(image)
-                .load(dish.image.toString())
-                .placeholder(R.drawable.chef)
-                .into(image)
-            if (dish.veg) {
-                Glide.with(veg)
-                    .load(R.drawable.veg)
-                    .into(veg)
-            } else {
-                Glide.with(veg)
-                    .load(R.drawable.nonveg)
-                    .into(veg)
+            if (dish.avail == true) {
+                btn.tag = dish
+                qty.tag = dish
+                bplus.tag = dish
+                bmin.tag = dish
+                dish_name.text = dish.name.toString()
+                price.text = "" + dish.price.toString()
+                Glide.with(image)
+                    .load(dish.image.toString())
+                    .placeholder(R.drawable.chef)
+                    .into(image)
+                if (dish.veg) {
+                    Glide.with(veg)
+                        .load(R.drawable.veg)
+                        .into(veg)
+                } else {
+                    Glide.with(veg)
+                        .load(R.drawable.nonveg)
+                        .into(veg)
+                }
             }
         }
     }

@@ -100,7 +100,7 @@ class FragmentPhoneAuth : Fragment() {
     }
 
     private fun moveToMain() {
-        findNavController().navigate(R.id.action_nav_phone_to_nav_menu)
+        findNavController().navigate(R.id.action_nav_phone_to_scanner)
     }
 
     private fun updateUI(currentUser: FirebaseUser?) {

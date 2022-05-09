@@ -10,7 +10,7 @@
     android:elevation="18dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgOrderSubCategory"
+        android:id="@+id/imgprepOrderSubCategory"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:elevation="18dp"
@@ -22,23 +22,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textOrderSubCategory"
+        android:id="@+id/textBillSubCategory"
         android:layout_width="0dp"
         android:layout_height="34dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/croissantone_regular"
         android:text="@string/tomato_vegg"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/cartAddButton"
-        app:layout_constraintEnd_toStartOf="@+id/vegOrder"
-        app:layout_constraintStart_toEndOf="@+id/imgOrderSubCategory"
+        app:layout_constraintEnd_toStartOf="@+id/vegprepOrder"
+        app:layout_constraintStart_toEndOf="@+id/imgprepOrderSubCategory"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.489" />
 
     <TextView
-        android:id="@+id/priceOrderDish"
+        android:id="@+id/priceBillDish"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -48,8 +48,8 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cartAddButton"
-        app:layout_constraintStart_toEndOf="@+id/imgOrderSubCategory"
-        app:layout_constraintTop_toBottomOf="@+id/textOrderSubCategory"
+        app:layout_constraintStart_toEndOf="@+id/imgprepOrderSubCategory"
+        app:layout_constraintTop_toBottomOf="@+id/textBillSubCategory"
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
@@ -98,12 +98,12 @@
 
 
     <ImageView
-        android:id="@+id/vegOrder"
+        android:id="@+id/vegprepOrder"
         android:layout_width="28dp"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/round_rect_shape"
+        android:background="@drawable/round_rect_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/veg" />

@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodfactory.R
 import com.example.foodfactory.adapter.subMenuAdapter
@@ -43,7 +42,6 @@ class SubMenuFragment : Fragment(), CellClickListener {
         auth = Firebase.auth
         db = Firebase.firestore
         prefs = Prefs(requireContext())
-        findNavController().navigate(SubMenuFragmentDirections.actionSubMenuFragmentToBottomDialog())
         return root
     }
 
@@ -52,6 +50,8 @@ class SubMenuFragment : Fragment(), CellClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val args = SubMenuFragmentArgs.fromBundle(requireArguments())
 
+        if (args.name.length > 5)
+            binding.menname.textSize = 28F
         super.onViewCreated(view, savedInstanceState)
         load_SubMenu(args.name)
         binding.menname.text = args.name
@@ -66,18 +66,9 @@ class SubMenuFragment : Fragment(), CellClickListener {
         binding.button.setOnClickListener {
             val dir = SubMenuFragmentDirections.actionSubMenuFragmentToOrderFragment()
             view.findNavController().navigate(dir)
-//            orders.forEach { order ->
-//                auth.currentUser?.let { it1 ->
-//                    val dateTime = LocalDateTime.now()
-//                    val datestr = dateTime.format(DateTimeFormatter.ofPattern("MdyH"))
-//                    db.collection("orders").document(it1.uid).collection(datestr)
-//                        .add(order).addOnSuccessListener {
-//                            Toast.makeText(requireContext(), "order updated", Toast.LENGTH_LONG)
-//                                .show()
-//                        }
-//                }
-//            }
+
         }
+        val size = prefs.viewOrders()?.size
     }
 
     override fun onDestroyView() {
@@ -87,7 +78,7 @@ class SubMenuFragment : Fragment(), CellClickListener {
 
     fun load_SubMenu(name: String) {
         val docRef =
-            db.collection("Menu-Collection").document(name.toLowerCase()).collection("items")
+            db.collection("Menu-Collection").document(name.toLowerCase()).collection("items").whereEqualTo("avail",true)
         docRef.get().addOnSuccessListener { document ->
             if (document != null) {
                 submenuArraylist.clear()
@@ -99,11 +90,14 @@ class SubMenuFragment : Fragment(), CellClickListener {
                     }
                 }
                 submenuadapter.notifyDataSetChanged()
+                binding.pbSubMenu.visibility = View.GONE
             } else {
                 Log.d(TAG, "No such document")
+                binding.pbSubMenu.visibility = View.GONE
             }
         }.addOnFailureListener { exception ->
             Log.d(TAG, "get failed with", exception)
+            binding.pbSubMenu.visibility = View.GONE
         }
     }
 

@@ -3,6 +3,7 @@ package com.example.foodfactory
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,13 +13,14 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.foodfactory.databinding.ActivityHomeBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
     private lateinit var mauth: FirebaseAuth
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,16 @@ class HomeActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarHome.toolbar)
         getSupportActionBar()?.hide()
+        mauth = Firebase.auth
+        if (mauth.currentUser != null) {
+            binding.appBarHome.drawerbtn.setOnClickListener {
+                if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+
+                } else {
+                    binding.drawerLayout.openDrawer(GravityCompat.START)
+                }
+            }
+        }
 
 //        binding.appBarHome.fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -41,7 +53,7 @@ class HomeActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_menu
+
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -53,7 +65,6 @@ class HomeActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.home, menu)
         return true
     }
-
 
 
     override fun onSupportNavigateUp(): Boolean {

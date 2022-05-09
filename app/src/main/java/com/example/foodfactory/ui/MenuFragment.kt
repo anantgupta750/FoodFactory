@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodfactory.adapter.MenuAdapter
 import com.example.foodfactory.databinding.FragmentMenuBinding
@@ -26,7 +25,6 @@ class MenuFragment : Fragment() {
     private lateinit var menuArraylist: ArrayList<Category>
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,7 +32,6 @@ class MenuFragment : Fragment() {
     ): View {
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        findNavController().navigate(MenuFragmentDirections.actionNavMenuToBottomDialog())
         return root
     }
 
@@ -43,18 +40,18 @@ class MenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        load_menu()
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         binding.recyclerView.setHasFixedSize(true)
         menuArraylist = arrayListOf()
-        menuAdapter = MenuAdapter(this,menuArraylist)
+        menuAdapter = MenuAdapter(this, menuArraylist)
         binding.recyclerView.adapter = menuAdapter
-
+        load_menu()
         binding.button.setOnClickListener {
             val dir = MenuFragmentDirections.actionNavMenuToOrderFragment()
             view.findNavController().navigate(dir)
-
         }
+        val prefs = Prefs(requireContext())
+        val size = prefs.viewOrders()?.size
     }
 
     override fun onDestroyView() {
@@ -68,15 +65,18 @@ class MenuFragment : Fragment() {
         docRef.get().addOnSuccessListener { document ->
             if (document != null) {
                 menuArraylist.clear()
-                for (doc in document){
+                for (doc in document) {
                     menuArraylist.add(doc.toObject<Category>())
                 }
                 menuAdapter.notifyDataSetChanged()
+                binding.pbMenu.visibility = View.GONE
             } else {
                 Log.d(TAG, "No such document")
+                binding.pbMenu.visibility = View.GONE
             }
         }.addOnFailureListener { exception ->
             Log.d(TAG, "get failed with", exception)
+            binding.pbMenu.visibility = View.GONE
         }
     }
 }
