@@ -6,6 +6,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'debug.keystore'
+            keyPassword 'android'
+            storePassword 'android'
+            storeFile file('C:\\Users\\DELL\\.android\\debug.keystore')
+        }
+    }
     compileSdk 31
 
     defaultConfig {

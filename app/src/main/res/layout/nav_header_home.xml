@@ -24,7 +24,7 @@
         android:id="@+id/userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/croissantone_regular"
+        android:fontFamily="@font/croissantoneregular"
 
         android:text="Food Factory"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"

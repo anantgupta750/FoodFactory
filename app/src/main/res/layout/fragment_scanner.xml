@@ -7,63 +7,64 @@
     android:layout_height="match_parent"
     tools:context=".ui.ScannerFragment">
 
- 
+
+    <!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="393dp"-->
+<!--        android:layout_height="51dp"-->
+<!--        android:layout_marginStart="4dp"-->
+<!--        android:layout_marginEnd="14dp"-->
+<!--        android:layout_marginBottom="44dp"-->
+<!--        android:text="Please scan the QR Code of your reserved table"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="18dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/btnScan"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="146dp"
+        android:layout_marginBottom="80dp"
         android:background="@drawable/roundbutton"
-        android:text="SCAN"
+        android:text="Scan QR"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="393dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="500dp"
-        android:text="Please scan the QR Code of your reserved table"
-        android:textAlignment="center"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnScan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="396dp"
-        android:layout_height="63dp"
+        android:layout_height="50dp"
         android:layout_marginStart="3dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="12dp"
-        android:fontFamily="@font/heading_name"
-        android:text="Reserve your Table"
+        android:fontFamily="@font/proximanova"
+        android:text="Reserve Your Table"
         android:textAlignment="center"
-        android:textSize="21dp"
+        android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="344dp"
-        android:layout_height="363dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="81dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/qr"
         app:layout_constraintBottom_toTopOf="@+id/btnScan"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
- />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.436" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
